@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Incidentes de Movimientos Telúricos en Chile</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        
+    </head>
+    <body class="bg-light">
+        <div class="page-alerts">
+                <div class="alert alert-success page-alert" id="alert-1">
+                    <button type="button" class="close"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+                    <strong>Cool!</strong> La incidencia ha sido registrada.
+                </div>
+                <div class="alert alert-danger page-alert" id="alert-2">
+                    <button type="button" class="close"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+                    <strong>Ooops!</strong> La incidencia ha sido eliminada.
+                </div>
+        </div>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <div class="container">
+            <div class="py-5 text-center">
+                <h2>Incidentes</h2>
+                <p>Movimientos telúricos en Chile</p>
+            </div>
+            <div>
+                <div class="elem-demo col-md-12 order-md-1">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="col-md-4 order-md-1">
+                    <h4 class="mb-3" style="text-align:center">Registro de Incidente</h4>
+                    <div class="row">
+                        <form id="form_incidencia" class="needs-validation" novalidate>
+                            <div class="col-md-12 mb-3">
+
+                                <div class="form-group">
+                                    <label for="displayName">Nombre del Registro</label>
+                                    <input class="form-control" type="text" id="displayName" name="displayName" required>
+                                    <div class="valid-feedback">
+                                            Looks good!
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="region">Region</label>
+                                    <select class="form-control" id="region" name="region" onchange="secondselect();" required >
+                                        <option value="" disabled selected>Selecciona una Región</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label id="labelprov" style="display:none" for="provincia">Provincia</label>
+                                    <select id="provincia" style="display:none" class="form-control" title="asd" name="provincia" onchange="thirdselect();" required>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label id="labelcomuna" style="display:none" for="comuna">Comuna</label>
+                                    <select id="comuna" style="display:none" class="form-control" name="comuna" required>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="magnitude">Magnitud</label>
+                                    <input class="form-control" type="number" step="0.1" id="magnitude" min="0" max="12" name="magnitude" placeholder="Magnitud de 0 a 12" required>
+                                </div>
+                                
+                                <input type="submit" name="botonsub" class="btn btn-primary btn-lg btn-block" value="Enviar">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-md-8 order-md-2 mb-3">
+                    <h4 class="mb-3" style="text-align:center">Listado de Incidencias</h4>
+                    <div class="row" style="height:400px;overflow:auto;">
+                            <div id="test" class="col-md-12 mb-3">
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+       <!--<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>-->
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+        <script src="data.js"></script>
+        <script src="script.js"></script>
+
+    </body>
+    <style>
+        .page-alerts {
+            margin-bottom: 10px;
+        }
+
+        .page-alerts .page-alert {
+            border-radius: 0;
+            margin-bottom: 0;
+        }
+    </style>
+
+</html>
+
+
